@@ -15,7 +15,7 @@ To-do:
 - Heap Tree
 - Trie(?) -->
 
-#### [Double ended queue](https://github.com/Stealthhy7512/data-structures-c/deque)
+#### [Double ended queue](deque)
 ```C
 // Example usage
 deque_t deque = make_deque();
@@ -28,7 +28,7 @@ pop_left(deque);
 pop_right(deque);
 ```
 
-#### [Queue](https://github.com/Stealthhy7512/data-structures-c/queue)
+#### [Queue](queue)
 ```C
 // Example usage
 deque_t queue = make_deque();
@@ -41,7 +41,7 @@ while (!empty(queue)) {
 void* front = queue_peek(queue);
 ```
 
-#### [Stack](https://github.com/Stealthhy7512/data-structures-c/stack)
+#### [Stack](stack)
 ```C
 // Example usage
 deque_t stack = make_deque();
