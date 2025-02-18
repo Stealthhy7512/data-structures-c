@@ -5,9 +5,9 @@ Mostly generic implementations of basic data structures such as `queue`, `stack`
 Currently supported data structures:
 - Deque
 - Queue
+- Stack
 
 To-do:
-- Stack
 - Binary Tree
 - Graph
 - Binary Search Tree
