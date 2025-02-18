@@ -7,10 +7,10 @@ Currently supported data structures:
 - Queue
 
 To-do:
--Stack
--Binary Tree
--Graph
--Binary Search Tree
--Priority Queue
--Heap Tree
--Trie(?)
+- Stack
+- Binary Tree
+- Graph
+- Binary Search Tree
+- Priority Queue
+- Heap Tree
+- Trie(?)
