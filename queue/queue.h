@@ -8,9 +8,9 @@
 //   struct s_deque_node* back;
 // } queue_t;
 
-void queue_push(deque_t*, void*);
-void queue_pop(deque_t*);
-void* queue_front(deque_t*);
+void enqueue(deque_t*, void*);
+void* queue_peek(deque_t*);
+void* dequeue(deque_t*);
 int empty(deque_t*);
 
 #endif

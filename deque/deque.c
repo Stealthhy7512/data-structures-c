@@ -11,7 +11,8 @@ deque_t* make_deque() {
 }
 
 void push_front(deque_t* deque, void* value) {
-  deque_node_t* node = malloc(sizeof(deque_node_t));
+  deque_node_t* node;
+  node = malloc(sizeof(deque_node_t));
 
   node->value = value;
   node->prev = NULL;
@@ -21,7 +22,8 @@ void push_front(deque_t* deque, void* value) {
 }
 
 void push_back(deque_t* deque, void* value) {
-  deque_node_t* node = malloc(sizeof(deque_node_t));
+  deque_node_t* node;
+  node = malloc(sizeof(deque_node_t));
 
   node->value = value;
   node->prev = deque->back;
