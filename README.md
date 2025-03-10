@@ -18,38 +18,43 @@ To-do:
 #### [Double ended queue](deque)
 ```C
 // Example usage
-deque_t deque = make_deque();
-push_back(deque, (void *)10);
-push_front(deque, (void *)'A');
-printf("%c", peek_front(deque));
-printf("%d", peek_back(deque));
+DEQUE_INIT(deque, int);
+DEQUE_INIT(deque_char, char);
 
-pop_left(deque);
-pop_right(deque);
+DEQUE_PUSH_BACK(deque, int, 10);              deque = [10] 
+DEQUE_PUSH_FRONT(deque_char, char, 'A');      deque_char = ['A']
+
+printf("%d", DEQUE_PEEK_BACK(deque));         >> 10
+printf("%c", DEQUE_PEEK_FRONT(deque_char));   >> 'A'
+
+DEQUE_POP_FRONT(deque);                       deque = []
+DEQUE_POP_BACK(deque_char);                   deque_char = []
 ```
 
 #### [Queue](queue)
 ```C
 // Example usage
-deque_t queue = make_deque();
-enqueue(queue, (void *)20);
-enqueue(queue, (void *)30);
+QUEUE_INIT(queue);
 
-while (!empty(queue)) {
-  printf("%d ", dequeue(queue));
+ENQUEUE(queue, int, 20);                      queue = [20]
+ENQUEUE(queue, int, 30);                      queue = [20, 30]
+
+while (!QUEUE_EMPTY(queue)) {                 >> 20 30
+  printf("%d ", QUEUE_PEEK(queue));
+  DEQUEUE(queue);
 }
-void* front = queue_peek(queue);
 ```
 
 #### [Stack](stack)
 ```C
 // Example usage
-deque_t stack = make_deque();
-stack_push(stack, (void *)1);
-stack_push(stack, (void *)2);
+INIT_STACK(stack, double);
 
-while (!empty(stack)) {
-  printf("%d ", stack_top(stack));
-  stack_pop(stack);
+STACK_PUSH(stack, double, 10);                stack = [10]
+STACK_PUSH(stack, double, 3.14);              stack = [3.14, 10]
+
+while (!STACK_EMPTY(stack)) {                 >> 3.14 10.00
+  printf("%.2lf ", STACK_TOP(stack));
+  STACK_POP(stack);
 }
 ```

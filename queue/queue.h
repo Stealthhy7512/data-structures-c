@@ -1,16 +1,23 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "deque.h"
+#include "../deque/deque.h"
 
-// typedef struct s_queue {
-//   struct s_deque_node* front;
-//   struct s_deque_node* back;
-// } queue_t;
+#define INIT_QUEUE(name, type)              \
+    INIT_DEQUE(name, type)
 
-void enqueue(deque_t*, void*);
-void* queue_peek(deque_t*);
-void* dequeue(deque_t*);
-int empty(deque_t*);
+#define ENQUEUE(name, type, data)           \
+    DEQUE_PUSH_BACK(name, type, data)
+
+#define DEQUEUE(name)                       \
+    DEQUE_POP_FRONT(name)
+
+#define QUEUE_PEEK(name)                    \
+    DEQUE_PEEK_FRONT(name)
+
+#define QUEUE_EMPTY(name)                   \
+    !name->front || !name->back
+
+#define QUEUE_SIZE(name)    (name->size)
 
 #endif
